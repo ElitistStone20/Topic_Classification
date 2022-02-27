@@ -10,6 +10,6 @@ Please ensure you install the following libraries:
 - matplotlib
 - numpy
 
-Ensure the BBC dataset is inserted in the main directory of the project. Keep the 'bbc' folder and all its sub folders intact
+Unzip the BBC dataset in the main directory of the Python project. Ensure all subfolders remain intact, with no name changes.
 
 Once set up, run main.py and follow the text output to execute desired functions

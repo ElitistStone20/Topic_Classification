@@ -6,6 +6,7 @@ from sklearn.utils import shuffle
 import os
 from test_classifiers import train_classifiers
 from overfitting_test import test_over_fitting
+from developed_classifier import train_final_classifier
 
 
 # Funciton to Vectorize the corpus using the TfidfVectorizer
@@ -78,19 +79,23 @@ def split_dataset(data, labels):
 
 # Function to evaluate the user's input and execute the desired scripts
 def evaluate_user_input(data, labels):
-    route = input("PLease enter one of the follow:\n")
-    if route is '1':
+    route = input("Please enter one of the follow:\n"
+                  "Download NLTK requirements - 0\n"
+                  "Train Multiple Classifiers and display results - 1\n"
+                  "Test for over-fitting - 2\n"
+                  "Train final classification model - 3\n"
+                  "Exit - -1\n")
+    if route == '1':
         X_train, X_test, Y_train, Y_test = split_dataset(data, labels)
         train_classifiers(X_train, Y_train, X_test, Y_test)
-    elif route is '2':
+    elif route == '2':
         test_over_fitting(data, labels)
-    elif route is '3':
-        print()
-        # Run developed classifier when created
-    elif route is '0':
+    elif route == '3':
+        train_final_classifier(data, labels)
+    elif route == '0':
         download_nltk_requirements()
         return
-    elif route is '-1':
+    elif route == '-1':
         print("Exiting...")
         return
     else:

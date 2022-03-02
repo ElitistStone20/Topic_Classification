@@ -7,6 +7,8 @@ from sklearn.naive_bayes import GaussianNB, CategoricalNB
 from sklearn.neural_network import MLPClassifier
 from sklearn.neighbors import KNeighborsClassifier
 
+# Imported structures for testing each classification algorithm
+# Array of names for each test case
 names = [
     "Linear SVC - KNN",
     "ExtraTrees - KNN",
@@ -27,7 +29,7 @@ names = [
     "Linear SVC - NN",
     "ExtraTree - NN"
 ]
-
+# Array of Pipelines where each pipeline is a test case for a classifier and feature selection model
 pipeline = [
     Pipeline([
         ('feature_selection', SelectFromModel(LinearSVC())),
